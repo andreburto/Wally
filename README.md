@@ -1,7 +1,9 @@
 The Wally Framework
 ===================
 
-<p style="align:center;"><img src="https://raw.github.com/andreburto/Wally/master/wally1.png" /></p>
+<p style="align:center;">
+![](https://raw.github.com/andreburto/Wally/master/wally1.png)
+</p>
 
 ### ABOUT ###
 
