@@ -1,6 +1,8 @@
 The Wally Framework
 ===================
 
+<p style="align:center;"><img src="https://raw.github.com/andreburto/Wally/master/wally1.png" /></p>
+
 ### ABOUT ###
 
 The Wally Framework (Wally) began back in 2008 as an experiment to build my own framework.  It was influenced in part by [CodeIgniter](http://ellislab.com/codeigniter) at the time.  Wally went untouched for a few years, until I began rebuilding the LMS at work.  The first version of our LMS had been put together in 2002~2003 and worked for ten years.  It was however a Frankenstein monster that was showing its age.
