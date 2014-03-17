@@ -1,7 +1,7 @@
 The Wally Framework
 ===================
 
-<p style="align:center;">
+<p style="text-align:center;">
 <img src="https://raw.github.com/andreburto/Wally/master/wally1.png" style="margin:auto;" />
 </p>
 
