@@ -11,7 +11,7 @@ The Wally Framework (Wally) began back in 2008 as an experiment to build my own 
 
 In 2012~2013 when work started on the second version the half-finished Wally that I'd begun years ago came in handy.  Wally was fleshed out and integrated as part of the overall framework.
 
-What's presented here is a cleaned up, generalized version of Wally that's used in several appiations here at [WCCS](http://wccs.edu/).
+What's presented here is a cleaned up, generalized version of Wally that's used in several applications here at [WCCS](http://wccs.edu/).
 
 ### FAQ ###
 
