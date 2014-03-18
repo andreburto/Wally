@@ -1,32 +1,43 @@
 <?php
-/**
- * THIS SCRIPT DOES NOT WORK AS OF 2014-03-17.
- * IT IS AN OLD, BROKEN VERSION OF A SCRIPT TO GENERATE TABLE CLASS STUBS.
- * tbl_template_php.tmp IS A VALID STUB.
- */
+/*****
+ * Name: make_templates.php
+ * Date: 2014-03-17.
+ * 
+ * This script generates stub templates for the tables in your database using
+ * the tbl_template_php.tmp file. These are only stubs. You will have to fill
+ * in the CRUD functions within the classes yourself.
+ *****/
 
-define("ELEARN_PATH", "");
-define("TABLE_FILE", "tables.php");
 define("TEMPL_FILE", "tbl_template_php.tmp");
 
-include_once(TABLE_FILE);
+include_once("../Settings.php");
 
+// Connect to the database
+$q = new Query2($domain, $user, $pass, $dbase);
+$q->mysqli();
+$resa = $q->Select("show tables");
+$tables_in = "Tables_in_" . $dbase;
+
+// If there are no tables, exit out
+if (count($resa) == 0) { die("No tables.\n"); }
+
+// SLURP up the template template.
 $fh = fopen(TEMPL_FILE, "r");
 if ($fh == false) { exit; }
 $data = "";
-while(!feof($fh)) {
-    $data .= fread($fh, 128);
-}
+while(!feof($fh)) { $data .= fread($fh, 1024); }
 fclose($fh);
 
-foreach(array_keys($tables) as $tbl) {
-    $template = preg_replace("/people/", $tbl, $data);
-    $fh = fopen(ELEARN_PATH.'/tables/'.$tbl.".php", "w");
-    if ($fh == false) { die($tbl); }
+// Write out the templates
+foreach($resa as $tbl) {
+    $template = preg_replace("/table_name_here/", $tbl[$tables_in], $data);
+    $fh = fopen($tbl[$tables_in].".php", "w");
+    if ($fh == false) { die("Could not generate: ".$tbl[$tables_in]."\n"); }
     fwrite($fh, $template, strlen($template));
     fclose($fh);
 }
 
+// Exit cleanly
 exit;
 
 ?>
