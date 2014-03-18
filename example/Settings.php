@@ -9,7 +9,7 @@ define("WALLY_PATH", preg_replace("|\\\|", "/", dirname(__FILE__)));
 define("WWW_PATH", "/www/");
 define("TBL_DIR", "/tables/");
 define("FNC_DIR", "/functions/");
-define("WWW_DOMAIN", "");
+define("WWW_DOMAIN", "alexandria");
 
 // Include the core libraries for E-Learning
 include_once(WALLY_PATH . "/Query2.php");
@@ -25,9 +25,9 @@ foreach(glob(WALLY_PATH.TBL_DIR.'/*.php') as $tbl) { include_once($tbl); }
 foreach(glob(WALLY_PATH.FNC_DIR.'/*.php') as $fnc) { include_once($fnc); }
 
 // Global database variables
-$domain = "";
-$dbase  = "";
-$user   = "";
-$pass   = "";
+$domain = "aglaope";
+$dbase  = "todo";
+$user   = "todo";
+$pass   = "todo";
 
 ?>
