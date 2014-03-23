@@ -17,7 +17,9 @@ class todo extends WallyQuery2 {
     /* READ FUNCTIONS */
     public function GetOne($itemid=null) {
         if ($itemid==null) { return $this->SetError("No itemid passed"); }
-        return $this->SelectRecord(array('itemid'=>$itemid), true);
+        $res = $this->SelectRecord(array('itemid'=>$itemid), true);
+        if ($res==false) { return $this->SetError("No entry for that ID"); }
+        return $res[0];
     }
     
     public function GetAll() {
@@ -26,8 +28,8 @@ class todo extends WallyQuery2 {
         
         /**
          * WallyQuery2.php::SelectAll() is primitive because it was rarely used.
-         * It needs to be able modified to sort by column at some point. Until
-         * then sort with ksort with an ID as an array key. --FIX--
+         * It needs to be modified to sort by column at some point. Until then
+         * sort with ksort with an ID as an array key. --WILL FIX--
          **/
         $temp = array();
         foreach($res as $item) { $temp[$item['itemid']] = $item; }

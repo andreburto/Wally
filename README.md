@@ -23,6 +23,10 @@ During the investigative phase of last year's work I looked into using CodeIgnit
 
 Building your own framework from scratch is likely the wrong path to take on most web projects.  So far it's worked out for me.
 
+### INSTRUCTIONS ###
+
+Placeholder.
+
 ### TODO ###
 
 1. Finish cleaning up and generalizing the code. (In progress)
@@ -30,3 +34,4 @@ Building your own framework from scratch is likely the wrong path to take on mos
 3. Write installation and setup tutorial for working demo.
 4. Make Unit tests for future expansion.
 5. Go back finish documenting the code where needed.
+6. Add sorting arguments to WallyQuery2.php::SelectAll().
