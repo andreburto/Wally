@@ -20,6 +20,16 @@ class users extends WallyQuery2 {
         if ($password==null) { return $this->SetError("No pasword passed"); }
     }
     
+    public function GetUserByName($usrname) {
+        if ($usrname==null) { return $this->SetError("No username passed"); }
+        
+    }
+    
+    public function ConfirmUser($usrname=null, $password=null) {
+        if ($usrname==null) { return $this->SetError("No username passed"); }
+        if ($password==null) { return $this->SetError("No pasword passed"); }
+    }
+    
     /* INSERT FUNCTIONS */
     public function AddUser($usrname=null, $password=null) {
         if ($usrname==null) { return $this->SetError("No username passed"); }
@@ -38,9 +48,11 @@ class users extends WallyQuery2 {
     }
     
     /* PROTECTED CLASS FUNCTIONS */
-    protected function MakeHash($userid=null, $password=null) {
+    protected function MakeHash($userid=null, $usrname=null, $password=null) {
         if ($userid==null) { return $this->SetError("No userid passed"); }
+        if ($usrname==null) { return $this->SetError("No username passed"); }
         if ($password==null) { return $this->SetError("No pasword passed"); }
+        return crypt($usrname.sha1(md5($usrname.$userid.$password)));
     }
 }
 
