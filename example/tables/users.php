@@ -1,7 +1,7 @@
 <?php
 
 /**
- * GENERIC TEMPLATE OF A TABLES CLASS
+ * users.php -- managed the user list and passwords in the users table
  */
 
 class users extends WallyQuery2 {
@@ -15,13 +15,33 @@ class users extends WallyQuery2 {
     }
     
     /* READ FUNCTIONS */
+    public function GetOne($userid=null) {
+        if ($userid==null) { return $this->SetError("No userid passed"); }
+        if ($password==null) { return $this->SetError("No pasword passed"); }
+    }
     
     /* INSERT FUNCTIONS */
+    public function AddUser($usrname=null, $password=null) {
+        if ($usrname==null) { return $this->SetError("No username passed"); }
+        if ($password==null) { return $this->SetError("No pasword passed"); }
+    }
     
     /* DELETE FUNCTIONS */
+    public function DelUser($userid=null) {
+        if ($userid==null) { return $this->SetError("No userid passed"); }
+    }
     
     /* UPDATE FUNCTIONS */
+    public function UpdatePassword($userid=null, $password=null) {
+        if ($userid==null) { return $this->SetError("No userid passed"); }
+        if ($password==null) { return $this->SetError("No pasword passed"); }
+    }
     
+    /* PROTECTED CLASS FUNCTIONS */
+    protected function MakeHash($userid=null, $password=null) {
+        if ($userid==null) { return $this->SetError("No userid passed"); }
+        if ($password==null) { return $this->SetError("No pasword passed"); }
+    }
 }
 
 ?>
